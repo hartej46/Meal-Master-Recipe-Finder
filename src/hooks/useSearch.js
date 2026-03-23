@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function useSearch({parameter, value}){
 
-    const [recipe, setRecipe] = useState(null);
+    const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -11,7 +11,7 @@ function useSearch({parameter, value}){
             try {
                 const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?${parameter}=${value}}`);
                 const json = await res.json();
-                setRecipe(json);
+                setData(json);
             } catch (err) {
                 setError(err);
             } finally {
@@ -21,7 +21,7 @@ function useSearch({parameter, value}){
         fetchMeal();
     }, []);
 
-    return { recipe, loading, error };
+    return { data, loading, error };
 }
 
 export default useSearch;

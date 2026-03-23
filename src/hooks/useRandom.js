@@ -11,7 +11,7 @@ function useRandom(){
             try {
                 const res = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
                 const json = await res.json();
-                setData(json);
+                setRecipe(json);
             } catch (err) {
                 setError(err);
             } finally {
@@ -21,7 +21,7 @@ function useRandom(){
         fetchMeal();
     }, []);
 
-    return { data, loading, error };
+    return { recipe, loading, error };
 }
 
 export default useRandom;
