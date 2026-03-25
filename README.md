@@ -19,8 +19,6 @@ Each recipe has its own dedicated page using URL parameters.
 ⸻
 
 🛠️ Tech Stack
-	•	Frontend: React.js
-	•	State Management: React Hooks
-	•	Routing: React Router Dom
+	•	Frontend: HTML, JS
 	•	API: https://www.themealdb.com/api.php
 	•	Styling: CSS 
